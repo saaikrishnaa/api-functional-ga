@@ -33,7 +33,7 @@ jobs:
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
         run: |
-          newman run https://api.postman.com/collections/16542258-62c8f943-4e8e-410f-b408-019b4e05710a?access_key=PMAT-01GZHDFB70BTRY9A9JR4SA9SHK -d input-data.csv -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+          newman run https://api.postman.com/collections/16542258-62c8f943-4e8e-410f-b408-019b4e05710a?access_key=PMAT-01GZHDFB70BTRY9A9JR4SA9SHK -d input-data.csv -r htmlextra
 
 
       # Upload the contents of Test Results directory to workspace
