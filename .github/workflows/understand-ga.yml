@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
 
       # Install Node on the runner
       - name: Install Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: "17.x"
+          node-version: "16.x"
 
 
       # Install the newman command line utility and also install the html extra reporter
@@ -27,7 +27,7 @@ jobs:
 
       # Make directory to upload the test results
       - name: Make Directory for results
-        run: mkdir -p apiFunctionalTestResults
+        run: mkdir -p Results
 
 
       # Run the POSTMAN collection
@@ -38,7 +38,7 @@ jobs:
 
       # Upload the contents of Test Results directory to workspace
       - name: Output the run Details
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: RunReports
           path: apiFunctionalTestResults
